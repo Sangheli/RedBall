@@ -6,4 +6,5 @@ public class PrefabContainer : ScriptableObject
 {
    public AssetReference playerView;
    public AssetReference levelView;
+   public AssetReference paralaxView;
 }

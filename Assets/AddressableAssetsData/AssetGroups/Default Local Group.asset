@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96f47f9c7ceae5a4fbeac071755bc360
+    m_Address: Assets/SangheliGame/Prefabs/Paralax.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e362732bd8faee14da4bb10d5a8685cc
     m_Address: Assets/SangheliGame/Prefabs/PlayerView.prefab
     m_ReadOnly: 0

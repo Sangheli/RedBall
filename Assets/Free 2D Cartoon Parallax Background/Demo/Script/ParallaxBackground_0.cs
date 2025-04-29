@@ -15,7 +15,10 @@ public class ParallaxBackground_0 : MonoBehaviour
     private float boundSizeX;
     private float sizeX;
     private GameObject Layer_0;
-    void Start()
+
+    private bool initDone;
+    
+    public void Init()
     {
         _camera = Camera.main.transform;
         sizeX = Layer_Objects[0].transform.localScale.x;
@@ -23,9 +26,14 @@ public class ParallaxBackground_0 : MonoBehaviour
         for (int i=0;i<5;i++){
             startPos[i] = _camera.position.x;
         }
+
+        initDone = true;
     }
 
     void Update(){
+        if(!initDone)
+            return;
+        
         //Moving camera
         if (Camera_Move){
         _camera.position += Vector3.right * Time.deltaTime * Camera_MoveSpeed;

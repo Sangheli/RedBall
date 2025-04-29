@@ -711,6 +711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1050474025036070056}
+  - component: {fileID: 6414076036043625577}
   m_Layer: 0
   m_Name: Paralax
   m_TagString: Untagged
@@ -738,6 +739,32 @@ Transform:
   - {fileID: 8929327904706776066}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6414076036043625577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6055859815337364967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e906c6017d501f947b0832dd4e87e66e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera_Move: 0
+  Camera_MoveSpeed: 3
+  Layer_Speed:
+  - 1
+  - 0.9
+  - 0.7
+  - 0.5
+  - 0.3
+  Layer_Objects:
+  - {fileID: 7342193056606739649}
+  - {fileID: 570861767384026700}
+  - {fileID: 3862858386280629794}
+  - {fileID: 8931772455201953367}
+  - {fileID: 3463312507676845063}
 --- !u!1 &7160029293375784742
 GameObject:
   m_ObjectHideFlags: 0

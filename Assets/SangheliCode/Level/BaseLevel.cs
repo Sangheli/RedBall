@@ -28,5 +28,9 @@ public class BaseLevel : MonoBehaviour
       playerController.Init();
 
       G.cameraFollow.target = playerView.transform;
+
+      var paralax = await ResourceLoader.Load<ParallaxBackground_0>(G.dataContainer.prefabContainer.paralaxView);
+      paralax.transform.SetParent(G.cameraFollow.transform);
+      paralax.Init();
    }
 }
