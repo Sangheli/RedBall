@@ -11,20 +11,38 @@ public class InputManager : MonoBehaviour
 
     private void OnEnable()
     {
-        _inputActions.Enable();
+        ToggleInput(G.currentGameState == GameState.Game);
     }
     
     private void OnDisable()
     {
-        _inputActions.Disable();
+        ToggleInput(false);
     }
     
     public void Init()
     {
+        G.GameStateUpdate += OnGameState;
         _inputActions.Player.Jump.started += ctx => G.OnJump?.Invoke(true);
         _inputActions.Player.Jump.canceled += ctx => G.OnJump?.Invoke(false);
     }
     
+    private void OnGameState(GameState state)
+    {
+        ToggleInput(state == GameState.Game);
+    }
+
+    private void ToggleInput(bool state)
+    {
+        if (state)
+        {
+            _inputActions.Enable();
+        }
+        else
+        {
+            _inputActions.Disable();
+        }
+    }
+
     private void Update()
     {
         Vector2 move = _inputActions.Player.Move.ReadValue<Vector2>();
