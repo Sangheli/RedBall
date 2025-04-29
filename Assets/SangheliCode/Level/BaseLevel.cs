@@ -18,6 +18,9 @@ public class BaseLevel : MonoBehaviour
    
    public async UniTaskVoid Load()
    {
-      await ResourceLoader.Load<PlayerView>(G.dataContainer.prefabContainer.playerView);
+      var levelView = await ResourceLoader.Load<LevelView>(G.dataContainer.prefabContainer.levelView);
+      levelView.transform.SetParent(transform);
+      
+      var playerView = await ResourceLoader.Load<PlayerView>(G.dataContainer.prefabContainer.playerView);
    }
 }

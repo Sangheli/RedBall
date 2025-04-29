@@ -5,4 +5,5 @@ using UnityEngine.AddressableAssets;
 public class PrefabContainer : ScriptableObject
 {
    public AssetReference playerView;
+   public AssetReference levelView;
 }
