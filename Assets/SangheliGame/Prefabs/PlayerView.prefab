@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 7559984604779907412}
   - component: {fileID: 4499258936209515545}
   - component: {fileID: 1538348173261188223}
+  - component: {fileID: 2219446067961041246}
   m_Layer: 6
   m_Name: PlayerView
   m_TagString: Untagged
@@ -348,5 +349,16 @@ MonoBehaviour:
     m_Bits: 384
   groundCheckRadius: 0.1
   rb: {fileID: 7559984604779907412}
-  groundCheckPoint: {fileID: 0}
   circleCollider: {fileID: 4499258936209515545}
+--- !u!114 &2219446067961041246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8602886633862587629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1dc296ff7c4e7d9d638dbfeb01ecf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
