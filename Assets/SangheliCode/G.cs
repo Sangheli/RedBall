@@ -11,6 +11,7 @@ public static class G
     public static Action<GameState> GameStateUpdate;
     public static Action<float> OnMove;
     public static Action<bool> OnJump;
+    public static CameraFollow cameraFollow;
 
     public static void Init()
     {
