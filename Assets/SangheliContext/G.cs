@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using SangheliCode;
 using SangheliCode.Level;
+using SangheliCore;
 using UnityEngine;
 
 //Global Context
@@ -9,6 +10,7 @@ public class G
 {
     public static G Instance;
     
+    public IGameMode GameMode = new GameModeManager();
     public UIManager uiManager;
     public InputManager inputManager;
     public DataContainer dataContainer;
