@@ -8,4 +8,5 @@ public enum GameState
     Game,
     Win,
     Lose,
+    Reload,
 }

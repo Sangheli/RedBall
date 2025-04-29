@@ -10,7 +10,7 @@ public class G
 {
     public static G Instance;
     
-    public IGameMode GameMode = new GameModeManager();
+    public IGameMode gameMode = new GameModeManager();
     public UIManager uiManager;
     public InputManager inputManager;
     public DataContainer dataContainer;
@@ -71,6 +71,7 @@ public class G
 
     private void InitManagers()
     {
+        gameMode.Init();
         inputProxy.Init();
         uiManager.Init();
         inputManager.Init();

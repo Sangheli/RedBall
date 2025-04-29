@@ -10,7 +10,7 @@ namespace SangheliCode.Unit
             if (!other.TryGetComponent<ObjectLoseWall>(out var result)) 
                 return;
             
-            G.Instance.GameMode.OnLose();
+            G.Instance.gameMode.OnLose();
         }
     }
 }

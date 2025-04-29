@@ -1,16 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CanvasWin : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+   [SerializeField] private Button buttonAction;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   private void Awake()
+   {
+      buttonAction.onClick.AddListener(OnAction);
+   }
+
+   private void OnAction()
+   {
+      G.Instance.GameStateUpdate.Invoke(GameState.Reload);
+   }
 }

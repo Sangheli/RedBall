@@ -9,7 +9,7 @@ public class EnterPoint : MonoBehaviour
     {
         G.Instance = new G();
         G.Instance.Init(monoBehContainer);
-        G.Instance.GameStateUpdate.Invoke(GameState.Load);
+        G.Instance.gameMode.Start();
     }
 
     private void LateUpdate()

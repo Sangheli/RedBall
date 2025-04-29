@@ -1,4 +1,5 @@
 ﻿using SangheliCore;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace SangheliCode
@@ -10,6 +11,21 @@ namespace SangheliCode
         public void Init()
         {
             G.Instance.OnCollectableUpdate += OnCollectable;
+            G.Instance.GameStateUpdate += OnGameState;
+        }
+
+        public void Start()
+        {
+            G.Instance.GameStateUpdate.Invoke(GameState.Load);
+        }
+
+        private void OnGameState(GameState state)
+        {
+            if(state == GameState.Reload)
+                ReloadCurrentScene();
+            
+            if(state == GameState.Load)
+                Time.timeScale = 1;
         }
 
         private void OnCollectable()
@@ -20,12 +36,14 @@ namespace SangheliCode
 
         public void OnWin()
         {
-            ReloadCurrentScene();
+            Time.timeScale = 0;
+            G.Instance.GameStateUpdate.Invoke(GameState.Win);
         }
 
         public void OnLose()
         {
-            ReloadCurrentScene();
+            Time.timeScale = 0;
+            G.Instance.GameStateUpdate.Invoke(GameState.Lose);
         }
 
         private void ReloadCurrentScene()
