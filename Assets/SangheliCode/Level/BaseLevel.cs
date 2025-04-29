@@ -11,7 +11,7 @@ public class BaseLevel : MonoBehaviour
 #pragma warning disable CS4014
    private void OnGameState(GameState state)
    {
-      if (state == GameState.Start)
+      if (state == GameState.Load)
          Load();
    }
 #pragma warning restore CS4014
@@ -32,5 +32,7 @@ public class BaseLevel : MonoBehaviour
       var paralax = await ResourceLoader.Load<ParallaxBackground_0>(G.dataContainer.prefabContainer.paralaxView);
       paralax.transform.SetParent(G.cameraFollow.transform);
       paralax.Init();
+      
+      G.GameStateUpdate.Invoke(GameState.Start);
    }
 }

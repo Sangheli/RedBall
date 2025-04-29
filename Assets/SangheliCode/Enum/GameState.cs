@@ -3,7 +3,7 @@ using UnityEngine;
 public enum GameState
 {
     None,
-    Loading,
+    Load,
     Start,
     Game,
     Win,

@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
 
    private void SetGameState(GameState state)
    {
-      canvasLoading.gameObject.SetActive(state == GameState.Loading);
+      canvasLoading.gameObject.SetActive(state == GameState.Load);
       canvasStart.gameObject.SetActive(state == GameState.Start);
       canvasGame.gameObject.SetActive(state == GameState.Game);
       canvasWin.gameObject.SetActive(state == GameState.Win);

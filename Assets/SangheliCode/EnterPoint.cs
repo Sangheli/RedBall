@@ -11,7 +11,7 @@ public class EnterPoint : MonoBehaviour
     private void Awake()
     {
         InitGlobalContext();
-        G.GameStateUpdate.Invoke(GameState.Start);
+        G.GameStateUpdate.Invoke(GameState.Load);
     }
 
     private void InitGlobalContext()
