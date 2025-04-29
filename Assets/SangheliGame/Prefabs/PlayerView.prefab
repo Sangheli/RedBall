@@ -345,6 +345,8 @@ MonoBehaviour:
   jumpForce: 10
   groundLayer:
     serializedVersion: 2
-    m_Bits: 128
-  groundCheckRadius: 1
+    m_Bits: 384
+  groundCheckRadius: 0.1
   rb: {fileID: 7559984604779907412}
+  groundCheckPoint: {fileID: 0}
+  circleCollider: {fileID: 4499258936209515545}

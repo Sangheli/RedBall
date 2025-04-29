@@ -8,11 +8,12 @@ public class PlayerView : MonoBehaviour, IUnit
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private CircleCollider2D circleCollider;
     
     private void OnValidate()
     {
-        if (rb == null)
-            rb = GetComponent<Rigidbody2D>();
+        rb ??= GetComponent<Rigidbody2D>();
+        circleCollider ??= GetComponent<CircleCollider2D>();
     }
 
     public void Move(float value)
@@ -32,6 +33,8 @@ public class PlayerView : MonoBehaviour, IUnit
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(transform.position, groundCheckRadius, groundLayer);
+        var down = Vector2.down * (circleCollider.radius);
+        Vector2 position = (Vector2)transform.position + down;
+        return Physics2D.OverlapCircle(position, groundCheckRadius, groundLayer);
     }
 }
