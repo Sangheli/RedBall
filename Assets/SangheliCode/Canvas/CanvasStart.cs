@@ -1,16 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CanvasStart : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private Button buttonPlay;
+
+    private void Awake()
     {
-        
+        buttonPlay.onClick.AddListener(OnPlay);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnPlay()
     {
-        
+        G.GameStateUpdate.Invoke(GameState.Game);
     }
 }
