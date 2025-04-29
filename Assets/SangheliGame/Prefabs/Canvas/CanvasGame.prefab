@@ -840,7 +840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonLeft: {fileID: 5111721899518574819}
   buttonRight: {fileID: 4211059091603984511}
-  buttonJump: {fileID: 1485812948814905691}
+  buttonJump: {fileID: 8027334209302620052}
 --- !u!1 &8520571589924763107
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,6 +853,7 @@ GameObject:
   - component: {fileID: 4006962833557410634}
   - component: {fileID: 3972576702027377587}
   - component: {fileID: 1485812948814905691}
+  - component: {fileID: 8027334209302620052}
   m_Layer: 5
   m_Name: ButtonJump
   m_TagString: Untagged
@@ -962,3 +963,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8027334209302620052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8520571589924763107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be10d15e5dd24b048b1b8b4092403c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
