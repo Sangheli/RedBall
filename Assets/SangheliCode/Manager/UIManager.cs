@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-   [SerializeField] private CanvasLoading canvasLoading;
-   [SerializeField] private CanvasStart canvasStart;
-   [SerializeField] private CanvasGame canvasGame;
-   [SerializeField] private CanvasWin canvasWin;
-   [SerializeField] private CanvasLose canvasLose;
+   [SerializeField] public CanvasLoading canvasLoading;
+   [SerializeField] public CanvasStart canvasStart;
+   [SerializeField] public CanvasGame canvasGame;
+   [SerializeField] public CanvasWin canvasWin;
+   [SerializeField] public CanvasLose canvasLose;
 
    public void Init()
    {

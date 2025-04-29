@@ -10,4 +10,9 @@ public class EnterPoint : MonoBehaviour
         G.Init(monoBehContainer);
         G.GameStateUpdate.Invoke(GameState.Load);
     }
+
+    private void LateUpdate()
+    {
+        G.OnLateUpdate();
+    }
 }

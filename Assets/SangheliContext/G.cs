@@ -12,10 +12,9 @@ public static class G
     public static DataContainer dataContainer;
     public static BaseLoader baseLoader = new();
     public static Transform parentLevel;
+    public static InputProxy inputProxy = new();
     
     public static Action<GameState> GameStateUpdate;
-    public static Action<float> OnMove;
-    public static Action<bool> OnJump;
     public static CameraFollow cameraFollow;
     public static GameState currentGameState;
     
@@ -25,6 +24,10 @@ public static class G
         new LoaderPlayer(),
         new LoaderParalax()
     };
+
+    public static readonly List<IInput> inputProviders = new() { };
+
+    private static bool _active;
 
     public static void Init(MonoBehContainer container)
     {
@@ -45,12 +48,25 @@ public static class G
         inputManager = container.inputManager;
         cameraFollow = container.cameraFollow;
         parentLevel = container.parentLevel;
+        
+        inputProviders.Add(uiManager.canvasGame);
+        inputProviders.Add(inputManager);
     }
 
     private static void InitManagers()
     {
+        inputProxy.Init();
         uiManager.Init();
         inputManager.Init();
         baseLoader.Init();
+        _active = true;
+    }
+
+    public static void OnLateUpdate()
+    {
+        if(!_active) 
+            return;
+        
+        inputProxy.OnLateUpdate();
     }
 }
