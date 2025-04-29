@@ -22,5 +22,11 @@ public class BaseLevel : MonoBehaviour
       levelView.transform.SetParent(transform);
       
       var playerView = await ResourceLoader.Load<PlayerView>(G.dataContainer.prefabContainer.playerView);
+
+      var playerController = new PlayerController();
+      playerController.unitView = playerView;
+      playerController.Init();
+
+      G.cameraFollow.target = playerView.transform;
    }
 }
