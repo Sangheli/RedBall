@@ -12,6 +12,6 @@ public class CanvasStart : MonoBehaviour
 
     private void OnPlay()
     {
-        G.GameStateUpdate.Invoke(GameState.Game);
+        G.Instance.GameStateUpdate.Invoke(GameState.Game);
     }
 }

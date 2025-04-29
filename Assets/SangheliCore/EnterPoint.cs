@@ -7,12 +7,13 @@ public class EnterPoint : MonoBehaviour
     
     private void Awake()
     {
-        G.Init(monoBehContainer);
-        G.GameStateUpdate.Invoke(GameState.Load);
+        G.Instance = new G();
+        G.Instance.Init(monoBehContainer);
+        G.Instance.GameStateUpdate.Invoke(GameState.Load);
     }
 
     private void LateUpdate()
     {
-        G.OnLateUpdate();
+        G.Instance.OnLateUpdate();
     }
 }

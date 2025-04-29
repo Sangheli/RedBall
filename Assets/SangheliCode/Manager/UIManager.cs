@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
 
    public void Init()
    {
-      G.GameStateUpdate += SetGameState;
+      G.Instance.GameStateUpdate += SetGameState;
    }
 
    private void SetGameState(GameState state)

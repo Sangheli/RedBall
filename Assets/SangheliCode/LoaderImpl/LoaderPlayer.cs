@@ -7,13 +7,13 @@ namespace SangheliCode.Level
     {
         public async UniTask Load(Transform levelParent)
         {
-            var playerView = await ResourceLoader.Load<PlayerView>(G.dataContainer.prefabContainer.playerView);
+            var playerView = await ResourceLoader.Load<PlayerView>(G.Instance.dataContainer.prefabContainer.playerView);
 
             var playerController = new PlayerController();
             playerController.unitView = playerView;
             playerController.Init();
             
-            G.cameraFollow.target = playerView.transform;
+            G.Instance.cameraFollow.target = playerView.transform;
         }
     }
 }

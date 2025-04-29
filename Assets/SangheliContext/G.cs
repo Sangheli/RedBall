@@ -5,43 +5,45 @@ using SangheliCode.Level;
 using UnityEngine;
 
 //Global Context
-public static class G
+public class G
 {
-    public static UIManager uiManager;
-    public static InputManager inputManager;
-    public static DataContainer dataContainer;
-    public static BaseLoader baseLoader = new();
-    public static Transform parentLevel;
-    public static InputProxy inputProxy = new();
+    public static G Instance;
     
-    public static Action<GameState> GameStateUpdate;
-    public static CameraFollow cameraFollow;
-    public static GameState currentGameState;
+    public UIManager uiManager;
+    public InputManager inputManager;
+    public DataContainer dataContainer;
+    public BaseLoader baseLoader = new();
+    public Transform parentLevel;
+    public InputProxy inputProxy = new();
     
-    public static readonly List<ILoader> loaders = new()
+    public Action<GameState> GameStateUpdate;
+    public CameraFollow cameraFollow;
+    public GameState currentGameState;
+    
+    public readonly List<ILoader> loaders = new()
     {
         new LoaderLevel(),
         new LoaderPlayer(),
         new LoaderParalax()
     };
 
-    public static readonly List<IInput> inputProviders = new() { };
+    public readonly List<IInput> inputProviders = new() { };
 
-    private static bool _active;
+    private bool _active;
 
-    public static void Init(MonoBehContainer container)
+    public void Init(MonoBehContainer container)
     {
         GameStateUpdate += OnGameState;
         SetManagers(container);
         InitManagers();
     }
 
-    private static void OnGameState(GameState state)
+    private void OnGameState(GameState state)
     {
         currentGameState = state;
     }
 
-    private static void SetManagers(MonoBehContainer container)
+    private void SetManagers(MonoBehContainer container)
     {
         dataContainer = container.dataContainer;
         uiManager = container.uiManager;
@@ -53,7 +55,7 @@ public static class G
         inputProviders.Add(inputManager);
     }
 
-    private static void InitManagers()
+    private void InitManagers()
     {
         inputProxy.Init();
         uiManager.Init();
@@ -62,7 +64,7 @@ public static class G
         _active = true;
     }
 
-    public static void OnLateUpdate()
+    public void OnLateUpdate()
     {
         if(!_active) 
             return;

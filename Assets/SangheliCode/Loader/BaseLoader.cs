@@ -4,7 +4,7 @@ public class BaseLoader
 {
    public void Init()
    {
-      G.GameStateUpdate += OnGameState;
+      G.Instance.GameStateUpdate += OnGameState;
    }
 
 #pragma warning disable CS4014
@@ -17,7 +17,7 @@ public class BaseLoader
 
    private async UniTaskVoid Load()
    {
-      foreach (var x in G.loaders) await x.Load(G.parentLevel);
-      G.GameStateUpdate.Invoke(GameState.Start);
+      foreach (var x in G.Instance.loaders) await x.Load(G.Instance.parentLevel);
+      G.Instance.GameStateUpdate.Invoke(GameState.Start);
    }
 }

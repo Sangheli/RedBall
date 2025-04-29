@@ -14,17 +14,23 @@ public class InputManager : MonoBehaviour, IInput
 
     private void OnEnable()
     {
-        ToggleInput(G.currentGameState == GameState.Game);
+        if(G.Instance == null)
+            return;
+        
+        ToggleInput(G.Instance.currentGameState == GameState.Game);
     }
     
     private void OnDisable()
     {
+        if(G.Instance == null)
+            return;
+        
         ToggleInput(false);
     }
     
     public void Init()
     {
-        G.GameStateUpdate += OnGameState;
+        G.Instance.GameStateUpdate += OnGameState;
         _inputActions.Player.Jump.started += ctx => OnJump(true);
         _inputActions.Player.Jump.canceled += ctx => OnJump(false);
     }

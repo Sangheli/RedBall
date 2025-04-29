@@ -7,7 +7,7 @@ namespace SangheliCode.Level
     {
         public async UniTask Load(Transform levelParent)
         {
-            var levelView = await ResourceLoader.Load<LevelView>(G.dataContainer.prefabContainer.levelView);
+            var levelView = await ResourceLoader.Load<LevelView>(G.Instance.dataContainer.prefabContainer.levelView);
             levelView.transform.SetParent(levelParent);
         }
     }

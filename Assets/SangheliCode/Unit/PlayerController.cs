@@ -6,8 +6,8 @@ public class PlayerController
     
     public void Init()
     {
-        G.inputProxy.OnMove += OnMove;
-        G.inputProxy.OnJump += OnJump;
+        G.Instance.inputProxy.OnMove += OnMove;
+        G.Instance.inputProxy.OnJump += OnJump;
     }
 
     void OnMove(float value)

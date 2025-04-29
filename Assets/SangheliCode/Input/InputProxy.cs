@@ -9,7 +9,7 @@ public class InputProxy
 
     public void Init()
     {
-        G.GameStateUpdate += OnGameState;
+        G.Instance.GameStateUpdate += OnGameState;
     }
 
     private void OnGameState(GameState state)
@@ -28,7 +28,7 @@ public class InputProxy
 
     private static float GetMoveX()
     {
-        foreach (var x in G.inputProviders)
+        foreach (var x in G.Instance.inputProviders)
         {
             var result = x.ValueX;
             if (result == null) continue;
@@ -40,7 +40,7 @@ public class InputProxy
 
     private bool GetJumpValue()
     {
-        foreach (var x in G.inputProviders)
+        foreach (var x in G.Instance.inputProviders)
         {
             var result = x.ValueJump;
             if (result == null) continue;
