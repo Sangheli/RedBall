@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Default Local Group
   m_GUID: 084e725f935356d4da930c054689a2f5
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: e362732bd8faee14da4bb10d5a8685cc
+    m_Address: Assets/SangheliGame/Prefabs/PlayerView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7e3cefb0c89e84144890853b9200fe5c, type: 2}
   m_SchemaSet:

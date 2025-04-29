@@ -3,6 +3,8 @@ using UnityEngine;
 public class EnterPoint : MonoBehaviour
 {
     [SerializeField] private UIManager uiManager;
+    [SerializeField] private DataContainer dataContainer;
+    [SerializeField] private BaseLevel baseLevel;
     
     private void Awake()
     {
@@ -12,7 +14,9 @@ public class EnterPoint : MonoBehaviour
 
     private void InitGlobalContext()
     {
-        G.UIManager = uiManager;
+        G.dataContainer = dataContainer;
+        G.uiManager = uiManager;
+        G.baseLevel = baseLevel;
         G.Init();
     }
 }

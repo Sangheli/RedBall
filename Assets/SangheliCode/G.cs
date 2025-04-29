@@ -3,13 +3,16 @@ using System;
 //Global Context
 public static class G
 {
-    public static UIManager UIManager;
-    public static InputManager InputManager = new();
+    public static UIManager uiManager;
+    public static InputManager inputManager = new();
+    public static DataContainer dataContainer;
 
     public static Action<GameState> GameStateUpdate;
+    public static BaseLevel baseLevel;
 
     public static void Init()
     {
-        UIManager.Init();
+        uiManager.Init();
+        baseLevel.Init();
     }
 }
