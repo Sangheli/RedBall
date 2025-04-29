@@ -1,7 +1,6 @@
 using Cysharp.Threading.Tasks;
-using UnityEngine;
 
-public class BaseLoader : MonoBehaviour
+public class BaseLoader
 {
    public void Init()
    {
@@ -18,7 +17,7 @@ public class BaseLoader : MonoBehaviour
 
    private async UniTaskVoid Load()
    {
-      foreach (var x in G.loaders) await x.Load(transform);
+      foreach (var x in G.loaders) await x.Load(G.parentLevel);
       G.GameStateUpdate.Invoke(GameState.Start);
    }
 }

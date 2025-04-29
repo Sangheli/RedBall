@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using SangheliCode;
 using SangheliCode.Level;
+using UnityEngine;
 
 //Global Context
 public static class G
@@ -9,7 +10,8 @@ public static class G
     public static UIManager uiManager;
     public static InputManager inputManager;
     public static DataContainer dataContainer;
-    public static BaseLoader baseLoader;
+    public static BaseLoader baseLoader = new();
+    public static Transform parentLevel;
     
     public static Action<GameState> GameStateUpdate;
     public static Action<float> OnMove;
@@ -40,9 +42,9 @@ public static class G
     {
         dataContainer = container.dataContainer;
         uiManager = container.uiManager;
-        baseLoader = container.baseLoader;
         inputManager = container.inputManager;
         cameraFollow = container.cameraFollow;
+        parentLevel = container.parentLevel;
     }
 
     private static void InitManagers()
