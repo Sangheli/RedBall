@@ -17,6 +17,7 @@ public class G
     public InputProxy inputProxy = new();
     
     public Action<GameState> GameStateUpdate;
+
     public CameraFollow cameraFollow;
     public GameState currentGameState;
     
@@ -31,11 +32,22 @@ public class G
 
     private bool _active;
 
+    public Action<int> OnCollectableFound;
+    public Action OnCollectableUpdate;
+    public int collectibleCount;
+    
     public void Init(MonoBehContainer container)
     {
         GameStateUpdate += OnGameState;
+        OnCollectableFound += OnCollectable;
         SetManagers(container);
         InitManagers();
+    }
+
+    private void OnCollectable(int value)
+    {
+        collectibleCount += value;
+        OnCollectableUpdate.Invoke();
     }
 
     private void OnGameState(GameState state)
